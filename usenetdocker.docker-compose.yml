@@ -1,0 +1,47 @@
+version: '3.3'
+services:
+    sabnzbd:
+        container_name: sabnzbd
+        environment:
+            - PUID=$plex_user_uid
+            - PGID=$plex_guid
+        ports:
+            - '8080:8080'
+            - '9090:9090'
+        volumes:
+            - '/sourcehostfolder/sabnzbd/config:/config'
+            - '/sourcehostfolder/downloads:/downloads'
+            - '/sourcehostfolder/moviedownloads:/movies_downloads'
+            - '/sourcehostfolder/tvdownloads:/tv_downloads'
+        restart: unless-stopped
+        image: linuxserver/sabnzbd
+
+    sonarr:
+        container_name: sonarr
+        environment:
+            - PUID=$plex_user_uid
+            - PGID=$plex_guid
+        ports:
+            - '8989:8989'
+        volumes:
+            - '/sourcehostfolder/sonarr/config:/config'
+            - '/sourcehostfolder/downloads:/downloads'
+            - '/sourcehostfolder/tvdownloads:/tv_downloads'
+            - '/sourcehostfolder/tv:/tv'
+        restart: unless-stopped
+        image: linuxserver/sonarr
+
+    radarr:
+        container_name: radarr
+        environment:
+            - PUID=$plex_user_uid
+            - PGID=$plex_guid
+        ports:
+            - '7878:7878'
+        volumes:
+            - '/sourcehostfolder/radarr/config:/config'
+            - '/sourcehostfolder/downloads:/downloads'
+            - '/sourcehostfolder/moviedownloads:/movies_downloads'
+            - '/sourcehostfolder/movies:/movies'
+        restart: unless-stopped
+        image: linuxserver/radarr
