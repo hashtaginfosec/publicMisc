@@ -1,3 +1,21 @@
+  
+<#
+.SYNOPSIS
+Performs cleanup, enables RDP, and sets DC logo as background.
+
+.DESCRIPTION
+Performs cleanup, enables RDP, and sets DC logo as background.
+
+.PARAMETER ComputerName
+String you want to set the hostname to.
+
+.EXAMPLE
+PS >IEX (New-Object Web.Client).DownloadString('https://raw.githubusercontent.com/hashtaginfosec/publicMisc/master/dc-prep.ps1'); Invoke-dcprep New-host-name
+.LINK
+https://raw.githubusercontent.com/hashtaginfosec/publicMisc/master/dc-prep.ps1
+#>
+
+
 Param(
    [Parameter(Position=1)]
    [string]$ComputerName
