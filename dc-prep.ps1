@@ -16,4 +16,7 @@ rm -Recurse -Force $env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Recent\*
 # Clear PowerShell History
 Clear-History
 
+# Clear PSReadline History
+Remove-Item (Get-PSReadlineOption).HistorySavePath
+
 Exit
