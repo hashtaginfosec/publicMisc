@@ -10,7 +10,7 @@ Performs cleanup, enables RDP, and sets DC logo as background.
 String you want to set the hostname to.
 
 .EXAMPLE
-PS >IEX (New-Object Web.Client).DownloadString('https://raw.githubusercontent.com/hashtaginfosec/publicMisc/master/dc-prep.ps1'); Invoke-dcprep -ComputerName NewPC
+PS >IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/hashtaginfosec/publicMisc/master/dc-prep.ps1'); Invoke-dcprep -ComputerName NewPC
 .LINK
 https://raw.githubusercontent.com/hashtaginfosec/publicMisc/master/dc-prep.ps1
 #>
