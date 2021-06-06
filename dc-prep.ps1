@@ -32,7 +32,7 @@ Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
 # Rename the machine
 function set-hostname{
-if ($ComputerName == "")
+if ($ComputerName = "")
 {
     [string]$ComputerName = "DigitalCrafts"
     Write-Host $ComputerName
