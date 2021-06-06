@@ -81,5 +81,5 @@ function Set-Wallpaper {
      Enable-RDP;
      set-hostname -ComputerName $ComputerName
      clean;   
-     exit
+     
     }
